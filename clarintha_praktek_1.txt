@@ -1,0 +1,111 @@
+# Nama : Clarintha Chelsy N
+# Kelas : XI TKJ 2
+# No Absen : 07
+# Soal : Di sebuah toko online, Anda bertanggung jawab untuk menghitung diskon berdasarkan jumlah total belanjaan pelanggan
+# Masukkan total belanjaan
+total_belanja = float(input("Masukkan total belanja dari pelanggan: "))
+
+# Diskon
+diskon = 0
+
+# Cek diskon
+if total_belanja > 500000:
+    diskon = 0.10  # Diskon 10% untuk total belanja pelanggan melebihi 500.000
+elif total_belanja >= 300000:
+    diskon = 0.05  # Diskon 5% untuk total belanja pelanggan di antara 300.000 dan 500.000
+
+# Hitung total belanja pelanggan setelah mendapatkan diskon
+total_setelah_mendapat_diskon = total_belanja - (total_belanja * diskon)
+
+# Cetak total belanjaan dan total setelah diskon
+print("Total belanja pelanggan: Rp", total_belanja)
+print("Mendapatkan diskon sebesar", int(diskon * 100), "%")
+print("Total setelah mendapatkan diskon: Rp", total_setelah_mendapat_diskon)
+
+# Soal = Sebagai seorang manajer proyek, Anda harus menentukan apakah suatu proyek akan selesai tepat waktu atau terlambat.
+from datetime import datetime
+
+# Masukkan estimasi waktu selesai proyek dalam format tanggal (YYYY-MM-DD)
+estimasi_selesai = input("Masukkan estimasi waktu selesai (YYYY-MM-DD): ")
+estimasi_selesai = datetime.strptime(estimasi_selesai, "%Y-%m-%d")
+
+# Input tanggal target selesai proyek dalam format tanggal (YYYY-MM-DD)
+tanggal_target = input("Masukkan tanggal target selesai (YYYY-MM-DD): ")
+tanggal_target = datetime.strptime(tanggal_target, "%Y-%m-%d")
+
+# Periksa apakah estimasi waktu selesai lebih awal atau sama dengan tanggal target
+if estimasi_selesai <= tanggal_target:
+    print("Tepat waktu")
+else:
+    print("Terlambat")
+
+# Sebagai seorang sistem administrator, Anda bertanggung jawab untuk memeriksa apakah suatu file di server sudah ada atau belum sebelum menggantinya.
+# Daftar file di server
+daftar_file_di_server = ["file1.txt", "file2.txt", "data.txt", "file3.txt"]
+
+# Input nama file dari pengguna
+nama_file = input("Masukkan nama file: ")
+
+# Periksa apakah nama_file ada dalam daftar_file_di_server
+if nama_file in daftar_file_di_server:
+    print("File sudah ada")
+else:
+    print("File belum ada")
+
+#Sebagai seorang kasir di toko, Anda harus menghitung jumlah diskon berdasarkan total belanjaan pelanggan dan jenis anggota (anggota biasa atau anggota premium).
+# Input total belanjaan dan status anggota (biasa atau premium)
+total_belanjaan = float(input("Masukkan total belanjaan: "))
+status_anggota = input("Status anggota (biasa atau premium): ").lower()  # Konversi ke huruf kecil
+
+# Inisialisasi variabel diskon
+diskon = 0
+
+# Periksa status anggota dan berikan diskon sesuai aturan
+if status_anggota == "premium":
+    if total_belanjaan > 500000:
+        diskon = 0.15  # Diskon 15%
+    else:
+        diskon = 0.10  # Diskon 10%
+elif status_anggota == "biasa":
+    if total_belanjaan > 300000:
+        diskon = 0.07  # Diskon 7%
+
+# Hitung jumlah diskon yang diberikan
+jumlah_diskon = total_belanjaan * diskon
+
+# Hitung total yang harus dibayarkan setelah diskon
+total_setelah_diskon = total_belanjaan - jumlah_diskon
+
+# Tampilkan jumlah diskon dan total yang harus dibayarkan
+print(f"Diskon yang diberikan: Rp {jumlah_diskon:.2f}")
+print(f"Total yang harus dibayarkan: Rp {total_setelah_diskon:.2f}")
+
+#Sebagai seorang guru, Anda harus menentukan nilai akhir siswa berdasarkan nilai tugas dan ujian.
+# Input nilai tugas dan nilai ujian
+nilai_tugas = float(input("Masukkan nilai tugas (skala 0-100): "))
+nilai_ujian = float(input("Masukkan nilai ujian (skala 0-100): "))
+
+# Periksa apakah siswa lulus atau gagal
+if nilai_tugas > 70 and nilai_ujian > 60:
+    status = "Lulus"
+else:
+    status = "Gagal"
+
+# Tampilkan nilai akhir dan status
+print(f"Nilai Akhir: {(nilai_tugas + nilai_ujian)/2}")
+print(f"Status: {status}")
+
+#Sebagai seorang analis data, Anda harus mengkategorikan produk berdasarkan penjualan bulanan.
+# Input penjualan bulanan produk
+penjualan = int(input("Masukkan jumlah penjualan bulanan: "))
+
+# Tentukan kategori berdasarkan jumlah penjualan
+if penjualan > 1000:
+    kategori = "Produk Terlaris"
+elif penjualan >= 500 and penjualan <= 1000:
+    kategori = "Produk Populer"
+else:
+    kategori = "Produk Biasa"
+
+# Tampilkan kategori produk
+print(f"Kategori Produk: {kategori}")
